@@ -32,3 +32,20 @@ add_filter( 'option_show_avatars', 'raf_mu_option_show_avatars', 10, 0 );
 function raf_mu_print_error( $output, $filename = 'debug_new.log' ) {
 	error_log( print_r( $output, true ) . "\n", 3, WP_CONTENT_DIR . '/' . $filename );
 }
+
+/**
+ * Vardump the output
+ *
+ * @param $output
+ * @param bool $pre
+ */
+function raf_mu_vardump( $output, $pre = true ) {
+	if ( $pre ) {
+		echo '<pre>';
+	}
+	var_dump( $output );
+
+	if ( $pre ) {
+		echo '</pre>';
+	}
+}
